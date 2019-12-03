@@ -25,10 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `saying`
+-- Table structure for table `sayings`
 --
 
-CREATE TABLE `saying` (
+CREATE TABLE `sayings` (
   `id` int(11) NOT NULL,
   `SayingText` varchar(255) NOT NULL,
   `SayingDate` date NOT NULL
@@ -39,9 +39,9 @@ CREATE TABLE `saying` (
 --
 
 --
--- Indexes for table `saying`
+-- Indexes for table `sayings`
 --
-ALTER TABLE `saying`
+ALTER TABLE `sayings`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -49,9 +49,9 @@ ALTER TABLE `saying`
 --
 
 --
--- AUTO_INCREMENT for table `saying`
+-- AUTO_INCREMENT for table `sayings`
 --
-ALTER TABLE `saying`
+ALTER TABLE `sayings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
