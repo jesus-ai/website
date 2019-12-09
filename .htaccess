@@ -1,0 +1,17 @@
+# Do not remove this line, otherwise mod_rewrite rules will stop working
+RewriteBase /
+
+# 1 ---- Establish a custom 404 File not Found page ----
+
+# ErrorDocument 404 /404.php # Eh
+
+# 2 ---- Prevent directory file listing in all of your folders ----
+
+IndexIgnore *
+
+#3 --- url rewriting ---
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?page=$1 [NC,L,QSA]
