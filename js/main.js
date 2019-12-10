@@ -54,7 +54,18 @@ document.addEventListener('DOMContentLoaded', () => {
     setSaying(index);
     document.getElementById('arrow_right').addEventListener('click', () => slideForm('Right'));
     document.getElementById('arrow_left').addEventListener('click', () => slideForm('Left'));
+    window.addEventListener('keydown', keyPressed);
 });
+
+function keyPressed(event) {
+    if (event.key === 'ArrowRight') {
+        slideForm('Left')
+    } else if (event.key === 'ArrowLeft') {
+        slideForm('Right')
+    }
+
+  console.log(event);
+}
 
 function slideForm(direction) {
     const counter = (direction === 'Right') ? 'Left' : 'Right';

@@ -1,11 +1,20 @@
-<!DOCTYPE html>
+<?php
+/*$db = new PDO('mysql:host=localhost;dbname=sayai', 'duncte123', '');
+$query = $db->query('SELECT SayingText as text, SayingDate as date FROM sayings ORDER BY RAND() LIMIT 5');
+$res = $query->fetchAll(PDO::FETCH_OBJ);
+
+$json = json_encode($res);*/
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Say AI</title>
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/css/main.css">
     <script>
+        // If running on prod
+        // const sayings = <?php echo $json; ?>;
+
         const sayings = [
             {text: 'A bird in the hand is worth two in  bush  bush', date: '10/12/2019'},
             {text: 'index 1', date: '10/13/2019'},
