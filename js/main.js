@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
     setSaying(index);
-    document.getElementById('arrow_right').addEventListener('click', () => slideForm('Right'));
-    document.getElementById('arrow_left').addEventListener('click', () => slideForm('Left'));
+    document.getElementById('arrow_right').addEventListener('click', () => slideForm('Left'));
+    document.getElementById('arrow_left').addEventListener('click', () => slideForm('Right'));
     window.addEventListener('keydown', keyPressed);
 });
 
