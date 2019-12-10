@@ -9,6 +9,13 @@ $json = json_encode($res);
 <head>
     <meta charset="UTF-8">
     <title>Say AI</title>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="SayAI"/>
+    <meta property="og:title" content="Say AI"/>
+    <meta property="og:image" content="https://avatars0.githubusercontent.com/u/57348154?s=200&amp;v=4"/>
+    <meta name="theme-color" content="#a32324"/>
+    <meta name="msapplication-TileColor" content="#a32324"/>
+    <meta property="og:description" content="An AI that generates random sayings"/>
     <link rel="stylesheet" href="/css/animate.css">
     <link rel="stylesheet" href="/css/main.css">
     <script>
