@@ -71,16 +71,15 @@ function keyPressed(event) {
     } else if (event.key === 'ArrowLeft') {
         slideForm('Right')
     }
-
-  console.log(event);
 }
 
 function slideForm(direction) {
     const counter = (direction === 'Right') ? 'Left' : 'Right';
+    const tmpIndex = (direction === 'Right') ? ++index : --index;
     const container = document.querySelector('.form');
     container.className = 'form animated bounceOut' + counter;
     setTimeout(() => {
-        setSaying(setIndex(++index));
+        setSaying(setIndex(tmpIndex));
         container.className = 'form animated bounceIn' + direction;
     }, 500);
 }

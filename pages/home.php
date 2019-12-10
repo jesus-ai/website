@@ -25,6 +25,7 @@ $json = json_encode($res);
         /*const sayings = [
             {text: 'A bird in the hand is worth two in  bush  bush', date: '10/12/2019'},
             {text: 'index 1', date: '10/13/2019'},
+            {text: 'index 2', date: '10/13/2019'},
         ];*/
     </script>
 </head>
