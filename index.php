@@ -7,6 +7,6 @@ $pagePath = __DIR__ . '/pages/' . $page . '.php';
 if (file_exists($pagePath)) {
 	require($pagePath);
 } else {
-	header('Not Found', true, 404);
+	header('HTTP/1.0 404 Not Found', true, 404);
 	// 404 page
 }
