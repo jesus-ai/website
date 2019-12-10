@@ -22,6 +22,7 @@ hr {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+	align-items:center;
 	margin: 5px;
 	height: 100%;
     width: 100%;
@@ -33,6 +34,7 @@ hr {
     z-index: 1;
     background: #FFFFFF;
     width: 500px;
+	height: max-content;
     border-radius: 5px;
     margin: 0 50px 0 50px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 0px 0 0 rgba(0, 0, 0, 0.24);
