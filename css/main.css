@@ -22,7 +22,8 @@ hr {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
+	overflow: hidden;
 }
 
 .form {
