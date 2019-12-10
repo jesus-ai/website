@@ -1,4 +1,5 @@
 <?php
+require(__DIR__ . '/config.php');
 
 $page = $_GET['page'] ?? 'home';
 $pagePath = __DIR__ . '/pages/' . $page . '.php';
