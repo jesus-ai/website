@@ -44,6 +44,10 @@ hr {
     padding: 10px 20px 10px 20px;
     text-align: left;
 }
+.error_container {
+    padding: 10px 20px 10px 20px;
+    text-align: center;
+}
 
 .date_container {
     padding-left: 20px;
