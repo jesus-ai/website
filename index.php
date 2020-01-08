@@ -8,5 +8,5 @@ if (file_exists($pagePath)) {
 	require($pagePath);
 } else {
 	header('HTTP/1.0 404 Not Found', true, 404);
-	// 404 page
+	require(__DIR__ . '/pages/404.php');
 }
