@@ -20,6 +20,8 @@ $json = json_encode($res);
     <link rel="stylesheet" href="/css/main.css">
     <script>
         // If running on prod
+		// Hey there programmer, we have an api over at https://sayai.online/api
+		// Or if you want XML data use https://sayai.online/api?xml=true
        const sayings = <?php echo $json; ?>;
 
         /*const sayings = [
