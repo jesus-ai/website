@@ -54,14 +54,14 @@ particlesJS("particles-js", {
 
 let index = 0;
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     if (!('content' in document.createElement('template'))) {
         alert('Please use a modern browser');
         return;
     }
     setSaying(index);
-    document.getElementById('arrow_right').addEventListener('click', () => slideForm('Left'));
-    document.getElementById('arrow_left').addEventListener('click', () => slideForm('Right'));
+    document.getElementById('arrow_right').addEventListener('click', function() { slideForm('Left'); });
+    document.getElementById('arrow_left').addEventListener('click', function() { slideForm('Right'); });
     window.addEventListener('keydown', keyPressed);
 });
 
@@ -78,7 +78,7 @@ function slideForm(direction) {
     const tmpIndex = (direction === 'Right') ? ++index : --index;
     const container = document.querySelector('.form');
     container.className = 'form animated bounceOut' + counter;
-    setTimeout(() => {
+    setTimeout(function () {
         setSaying(setIndex(tmpIndex));
         container.className = 'form animated bounceIn' + direction;
     }, 500);

@@ -1,9 +1,9 @@
 <?php
-$db = new PDO('mysql:host='.$db['host'].';dbname='.$db['db'], $db['user'], $db['pass']);
-$query = $db->query('SELECT SayingText as text, SayingDate as date FROM sayings ORDER BY RAND() LIMIT 100');
-$res = $query->fetchAll(PDO::FETCH_OBJ);
+//$db = new PDO('mysql:host='.$db['host'].';dbname='.$db['db'], $db['user'], $db['pass']);
+//$query = $db->query('SELECT SayingText as text, SayingDate as date FROM sayings ORDER BY RAND() LIMIT 100');
+//$res = $query->fetchAll(PDO::FETCH_OBJ);
 
-$json = json_encode($res);
+//$json = json_encode($res);
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,13 +20,13 @@ $json = json_encode($res);
     <link rel="stylesheet" href="/css/main.css">
     <script>
         // If running on prod
-        const sayings = <?php echo $json; ?>;
+       // const sayings = <?php /*echo $json;*/ ?>;
 
-        /*const sayings = [
+        const sayings = [
             {text: 'A bird in the hand is worth two in  bush  bush', date: '10/12/2019'},
             {text: 'index 1', date: '10/13/2019'},
             {text: 'index 2', date: '10/13/2019'},
-        ];*/
+        ];
     </script>
 </head>
 <body>
@@ -41,7 +41,7 @@ $json = json_encode($res);
     </div>
 </div>
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script src="/js/main.js"></script>
+<script src="/js/main.js?v=1.5"></script>
 
 <template id="content-template">
     <div class="saying_container"><h2>{text}</h2></div>
