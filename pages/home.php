@@ -17,12 +17,12 @@ $json = json_encode($res);
     <meta name="msapplication-TileColor" content="#a32324"/>
     <meta property="og:description" content="An AI that generates random sayings"/>
     <link rel="stylesheet" href="/css/animate.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/main.css?v=1">
     <script>
         // If running on prod
 		// Hey there programmer, we have an api over at https://sayai.online/api
 		// Or if you want XML data use https://sayai.online/api?xml=true
-       const sayings = <?php echo $json; ?>;
+        const sayings = <?php echo $json; ?>;
 
         /*const sayings = [
             {text: 'A bird in the hand is worth two in  bush  bush', date: '10/12/2019'},
