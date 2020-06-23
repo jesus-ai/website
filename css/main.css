@@ -64,6 +64,9 @@ a {
 {
     color: var( --red-color);
     width: 80px;
+    padding: 10rem;     
+    margin: -10rem; 
+    /*background: firebrick;*/
 }
 
 .arrow:hover
