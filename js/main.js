@@ -55,14 +55,45 @@ particlesJS("particles-js", {
 let index = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
+    if (window.sayAIPage !== 'home') {
+        return;
+    }
+
     if (!('content' in document.createElement('template'))) {
         alert('Please use a modern browser');
         return;
     }
+
     setSaying(index);
-    document.getElementById('arrow_right').addEventListener('click', function() { slideForm('Left'); });
-    document.getElementById('arrow_left').addEventListener('click', function() { slideForm('Right'); });
     window.addEventListener('keydown', keyPressed);
+
+    document.addEventListener('click', function (event) {
+        if (event.target.id === 'arrow_right') {
+            slideForm('Left');
+            return;
+        }
+
+        if (event.target.id === 'arrow_left') {
+            slideForm('Right')
+            return;
+        }
+
+        if (event.target.tagName !== 'A') {
+            return
+        }
+
+        event.cancelBubble = true;
+        event.preventDefault();
+
+        navigator.clipboard.writeText(event.target.href).then(
+            function () {
+                alert('Copied');
+            },
+            function () {
+                alert('Your clipboard is broken');
+            }
+        )
+    });
 });
 
 function keyPressed(event) {
@@ -104,6 +135,8 @@ function setSaying(index) {
     clone.querySelector('.saying_container>h2').innerHTML = saying.text;
     const date = clone.querySelector('.date_container>h2');
     date.innerHTML = date.innerHTML.replace('{date}', saying.date);
+    const permalink = clone.querySelector('.date_container>small>a');
+    permalink.href = permalink.href.replace('{id}', saying.id);
 
     container.innerHTML = '';
     container.appendChild(clone);

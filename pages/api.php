@@ -10,7 +10,8 @@ if (isset($_GET['xml'])) {
 
     $xml = new SimpleXMLElement('<say-ai/>');
     $saying = $xml->addChild('saying');
-    array_walk_recursive(array_flip($res), [$saying, 'addChild']);
+    $flip = array_flip($res);
+    array_walk_recursive($flip, [$saying, 'addChild']);
     die($xml->asXML());
 }
 

@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial;
+    font-family: Arial, serif;
     font-weight: normal;
     margin: 0px;
     color: #373D3F;
@@ -13,6 +13,10 @@ body {
 hr {
     color: var( --red-color);
     width: 92%;
+}
+
+a {
+    color: #373D3F;
 }
 
 .form_container {
@@ -53,6 +57,7 @@ hr {
     padding-left: 20px;
     margin: 0;
     text-align: left;
+    padding-bottom: 10px;
 }
 
 .arrow

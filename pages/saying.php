@@ -1,9 +1,22 @@
 <?php
-$db = new PDO('mysql:host='.$db['host'].';dbname='.$db['db'], $db['user'], $db['pass']);
-$query = $db->query('SELECT id, SayingText as text, SayingDate as date FROM sayings ORDER BY RAND() LIMIT 100');
-$res = $query->fetchAll(PDO::FETCH_OBJ);
+if (!isset($_GET['id']) || empty($_GET['id'])) {
+    header('Location: /');
+    return;
+}
 
-$json = json_encode($res);
+$db = new PDO('mysql:host='.$db['host'].';dbname='.$db['db'], $db['user'], $db['pass']);
+$query = $db->prepare('SELECT SayingText as text, SayingDate as date FROM sayings WHERE id = :id');
+
+$query->execute([
+        'id' => $_GET['id'],
+]);
+
+$res = $query->fetch(PDO::FETCH_OBJ);
+
+if (!$res) {
+    header('Location: /');
+    return;
+}
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,44 +31,28 @@ $json = json_encode($res);
         <meta property="og:description" content="An AI that generates random sayings"/>
         <link rel="stylesheet" href="/css/animate.css">
         <link rel="stylesheet" href="/css/main.css?v=2">
-        <script>
-          // Hey there programmer, we have an api over at https://sayai.online/api
-          // Or if you want XML data use https://sayai.online/api?xml=true
-          const sayings = <?php echo $json; ?>;
-
-          /*const sayings = [
-              {text: 'A bird in the hand is worth two in  bush  bush', date: '10/12/2019'},
-              {text: 'index 1', date: '10/13/2019'},
-              {text: 'index 2', date: '10/13/2019'},
-          ];*/
-        </script>
     </head>
     <body>
         <div id="particles-js"></div>
         <div class="resize"></div>
         <div class="container">
             <div class="form_container">
-                <img class="arrow" id="arrow_left" src="/img/back.svg" alt="">
                 <div class="form animated bounceInDown">
+                    <div class="saying_container"><h2><?php echo $res->text; ?></h2></div>
+                    <hr>
+                    <div class="date_container">
+                        <h2>
+                            <?php echo $res->date; ?> ~ SayAI
+                        </h2>
+                    </div>
                 </div>
-                <img class="arrow" id="arrow_right" src="/img/back.svg" alt="">
             </div>
         </div>
+
         <script>
-          window.sayAIPage = 'home';
+          window.sayAIPage = 'show';
         </script>
         <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script src="/js/main.js?v=2"></script>
-
-        <template id="content-template">
-            <div class="saying_container"><h2>{text}</h2></div>
-            <hr>
-            <div class="date_container">
-                <h2>{date} ~ SayAI</h2>
-                <small>
-                    <a href="https://sayai.online/saying?id={id}" target="_blank">copy permalink</a>
-                </small>
-            </div>
-        </template>
     </body>
 </html>

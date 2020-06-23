@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/main.css">
+    <title>Page not found</title>
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 <div id="particles-js"></div>
@@ -18,10 +18,6 @@
 </div>
 <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
-<script src="js/main.js"></script>
-
-<template id="content-template">
-
-</template>
+<script src="/js/main.js"></script>
 </body>
 </html>
